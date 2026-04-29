@@ -1,22 +1,22 @@
 # 📡 WaPort — Self-Hosted WhatsApp API
 
-**Run your own WhatsApp API on your server.**  
-Send messages from Excel, Python, Node.js, n8n — anything that can make an HTTP request.
+**Kendi sunucunda çalışan WhatsApp API sistemi.**  
+Excel, Python, Node.js, n8n ve HTTP isteği atabilen her şeyden mesaj gönder.
 
-🇹🇷 [Türkçe README için tıkla](README.tr.md)
+🇬🇧 [English README](README.md)
 
 🌐 **Website:** [waport.wizaicorp.com](https://waport.wizaicorp.com)  
 📦 **Panel:** [wa.wizaicorp.com](https://wa.wizaicorp.com)
 
 ---
 
-## 🚀 Installation
+## 🚀 Kurulum
 
-### Requirements
+### Gereksinimler
 - Node.js 18+
 - Termux / VPS / Linux / macOS
 
-### Quick Start
+### Hızlı Kurulum
 
 ```bash
 unzip whatsapp-api-setup.zip
@@ -24,10 +24,10 @@ cd whatsapp-api-setup
 node install.js
 ```
 
-Prompts:
-- `Local or VPS?` → `1` (local) or `2` (VPS)
-- `Port?` → Enter (default 3000)
-- `Start now?` → `y`
+Sorular:
+- `Bu cihaz mi VPS mi?` → `1` (local) veya `2` (VPS)
+- `Port?` → Enter (varsayılan 3000)
+- `Başlatılsın mı?` → `e`
 
 ### Termux (Android)
 
@@ -39,44 +39,44 @@ cd whatsapp-api-setup
 node install.js
 ```
 
-Easy start alias:
+Kolay başlatma alias:
 ```bash
 echo "alias wa='pkill -f src/index.js 2>/dev/null; sleep 1; cd ~/whatsapp-api && node src/index.js'" >> ~/.bashrc
 source ~/.bashrc
 wa
 ```
 
-### VPS Installation
+### VPS Kurulumu
 
 ```bash
-node install.js  # Select 2, enter IP/root/port
+node install.js  # 2 seç, IP/root/port gir
 ```
 
-Panel: `http://YOUR_SERVER_IP:3000`
+Panel: `http://SUNUCU_IP:3000`
 
-Restart after reboot:
+VPS yeniden başlatma:
 ```bash
-ssh root@YOUR_SERVER_IP
+ssh root@SUNUCU_IP
 cd ~/whatsapp-api
 nohup node src/index.js > logs/server.log 2>&1 &
 ```
 
 ---
 
-## 📋 Panel Pages
+## 📋 Panel Sayfaları
 
-| URL | Description |
+| URL | Açıklama |
 |---|---|
 | `/` | Admin Panel |
-| `/kayit` | Customer demo registration |
-| `/musteri` | Customer dashboard |
-| `/toplu` | Bulk message panel |
+| `/kayit` | Müşteri demo kaydı |
+| `/musteri` | Müşteri dashboard |
+| `/toplu` | Toplu mesaj paneli |
 
 ---
 
-## 🔌 API Reference
+## 🔌 API Kullanımı
 
-All requests require:
+Tüm isteklerde header gerekli:
 ```
 X-Api-Token: YOUR_TOKEN
 Content-Type: application/json
@@ -84,7 +84,7 @@ Content-Type: application/json
 
 ---
 
-### Get Status
+### Durum Kontrolü
 
 ```http
 GET /api/status
@@ -95,10 +95,10 @@ curl https://your-server:3000/api/status \
   -H "X-Api-Token: YOUR_TOKEN"
 ```
 
-**Response:**
+**Yanıt:**
 ```json
 {
-  "customer": "John Doe",
+  "customer": "Ad Soyad",
   "plan": "basic",
   "daily_limit": 500,
   "wa_status": "connected",
@@ -109,7 +109,7 @@ curl https://your-server:3000/api/status \
 
 ---
 
-### Send Text Message
+### Metin Mesajı Gönder
 
 ```http
 POST /api/send
@@ -119,17 +119,17 @@ POST /api/send
 curl -X POST https://your-server:3000/api/send \
   -H "X-Api-Token: YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"to": "905xxxxxxxxx", "message": "Hello! 👋"}'
+  -d '{"to": "905xxxxxxxxx", "message": "Merhaba! 👋"}'
 ```
 
-**Response:**
+**Yanıt:**
 ```json
-{"ok": true, "message": "Message sent"}
+{"ok": true, "message": "Mesaj gönderildi"}
 ```
 
 ---
 
-### Send Image (URL)
+### Resim Gönder (URL)
 
 ```http
 POST /api/send/image
@@ -141,14 +141,14 @@ curl -X POST https://your-server:3000/api/send/image \
   -H "Content-Type: application/json" \
   -d '{
     "to": "905xxxxxxxxx",
-    "url": "https://example.com/image.jpg",
-    "caption": "Product image"
+    "url": "https://example.com/resim.jpg",
+    "caption": "Ürün görseli"
   }'
 ```
 
 ---
 
-### Send Document (URL)
+### Dosya Gönder (URL)
 
 ```http
 POST /api/send/document
@@ -160,14 +160,14 @@ curl -X POST https://your-server:3000/api/send/document \
   -H "Content-Type: application/json" \
   -d '{
     "to": "905xxxxxxxxx",
-    "url": "https://example.com/file.pdf",
-    "filename": "invoice.pdf"
+    "url": "https://example.com/dosya.pdf",
+    "filename": "fatura.pdf"
   }'
 ```
 
 ---
 
-### Send Media (File Upload)
+### Medya Gönder (Dosya Yükle)
 
 ```http
 POST /api/send/media
@@ -178,15 +178,15 @@ Content-Type: multipart/form-data
 curl -X POST https://your-server:3000/api/send/media \
   -H "X-Api-Token: YOUR_TOKEN" \
   -F "to=905xxxxxxxxx" \
-  -F "caption=Image caption" \
-  -F "file=@/path/to/image.jpg"
+  -F "caption=Resim açıklaması" \
+  -F "file=@/path/to/resim.jpg"
 ```
 
-Supported types: `image/*`, `video/*`, `audio/*`, `application/*`
+Desteklenen: `image/*`, `video/*`, `audio/*`, `application/*`
 
 ---
 
-### Send Bulk Messages
+### Toplu Mesaj
 
 ```http
 POST /api/send/bulk
@@ -198,14 +198,14 @@ curl -X POST https://your-server:3000/api/send/bulk \
   -H "Content-Type: application/json" \
   -d '{
     "messages": [
-      {"to": "905111111111", "message": "Campaign message 1"},
-      {"to": "905222222222", "message": "Campaign message 2"},
-      {"to": "905333333333", "message": "Campaign message 3"}
+      {"to": "905111111111", "message": "Kampanya mesajı 1"},
+      {"to": "905222222222", "message": "Kampanya mesajı 2"},
+      {"to": "905333333333", "message": "Kampanya mesajı 3"}
     ]
   }'
 ```
 
-**Response:**
+**Yanıt:**
 ```json
 {
   "ok": true,
@@ -217,11 +217,11 @@ curl -X POST https://your-server:3000/api/send/bulk \
 }
 ```
 
-> ⚠️ Max 50 messages per request. 500ms delay between messages is added automatically.
+> ⚠️ Maksimum 50 mesaj/istek. Mesajlar arası 500ms bekleme otomatik eklenir.
 
 ---
 
-### Check Numbers
+### Numara Kontrolü
 
 ```http
 POST /api/check
@@ -236,19 +236,19 @@ curl -X POST https://your-server:3000/api/check \
 
 ---
 
-### Connect WhatsApp
+### WhatsApp Bağlantı
 
 ```http
 POST /api/connect
 ```
 
 ```bash
-# QR code
+# QR ile bağlan
 curl -X POST https://your-server:3000/api/connect \
   -H "X-Api-Token: YOUR_TOKEN" \
   -d '{"method": "qr"}'
 
-# Pairing code (no phone needed nearby)
+# Pairing code ile (telefon yanında olmasa da olur)
 curl -X POST https://your-server:3000/api/connect \
   -H "X-Api-Token: YOUR_TOKEN" \
   -d '{"method": "pairing", "phone": "905xxxxxxxxx"}'
@@ -256,7 +256,7 @@ curl -X POST https://your-server:3000/api/connect \
 
 ---
 
-## 💻 Code Examples
+## 💻 Kod Örnekleri
 
 ### Python
 
@@ -277,12 +277,12 @@ def send_bulk(messages):
                       json={"messages": messages})
     return r.json()
 
-# Usage
-send("905xxxxxxxxx", "Hello! 👋")
+# Kullanım
+send("905xxxxxxxxx", "Merhaba! 👋")
 
 send_bulk([
-    {"to": "905111111111", "message": "Message 1"},
-    {"to": "905222222222", "message": "Message 2"},
+    {"to": "905111111111", "message": "Mesaj 1"},
+    {"to": "905222222222", "message": "Mesaj 2"},
 ])
 ```
 
@@ -311,8 +311,8 @@ async function sendImage(to, url, caption) {
   return res.json();
 }
 
-send('905xxxxxxxxx', 'Hello! 👋');
-sendImage('905xxxxxxxxx', 'https://example.com/img.jpg', 'Product');
+send('905xxxxxxxxx', 'Merhaba! 👋');
+sendImage('905xxxxxxxxx', 'https://example.com/img.jpg', 'Ürün');
 ```
 
 ---
@@ -320,13 +320,13 @@ sendImage('905xxxxxxxxx', 'https://example.com/img.jpg', 'Product');
 ### Excel VBA
 
 ```vba
-Sub SendWhatsApp()
+Sub WhatsAppGonder()
     Dim http As Object
     Dim url As String, body As String
     
     url = "https://your-server:3000/api/send"
     
-    ' Column A: phone, Column B: message, Column C: result
+    ' A sütunu: telefon, B sütunu: mesaj, C sütunu: sonuç
     Dim i As Integer
     For i = 2 To 100
         If Cells(i, 1).Value = "" Then Exit For
@@ -344,7 +344,7 @@ Sub SendWhatsApp()
         Application.Wait Now + TimeValue("0:00:01")
     Next i
     
-    MsgBox "Done!"
+    MsgBox "Tamamlandı!"
 End Sub
 ```
 
@@ -402,32 +402,32 @@ function sendFromSheet() {
 
 ---
 
-## 👥 Customer Flow
+## 👥 Müşteri Akışı
 
-1. `/kayit` → Demo registration (50 free messages)
-2. `/musteri?token=xxx` → Access dashboard
-3. Connect WhatsApp (QR or pairing code)
-4. Get API token, start sending
-5. Limit reached → "Upgrade Plan" button appears
-6. Admin gets WhatsApp notification
-7. Admin upgrades plan
-8. Customer gets automatic WhatsApp notification
+1. `/kayit` → Demo kaydı (50 mesaj ücretsiz)
+2. `/musteri?token=xxx` → Dashboard'a giriş
+3. WhatsApp bağla (QR veya pairing code)
+4. API token al, kullanmaya başla
+5. Limit bitince "Plan Yükselt" görünür
+6. Admin WhatsApp'a bildirim gelir
+7. Admin planı yükseltir
+8. Müşteriye otomatik WhatsApp bildirimi gider
 
 ---
 
-## 🔧 Troubleshooting
+## 🔧 Sorun Giderme
 
 ```bash
-# Port in use
+# Port meşgul
 pkill -9 node && wa
 
-# Forgot password
+# Şifre unuttum
 cd ~/whatsapp-api && node reset-password.js
 
-# Database corrupted
+# Veritabanı bozuldu
 rm ~/whatsapp-api/data/database.bin && wa
 
-# VPS restart after reboot
+# VPS yeniden başlatma
 ssh root@IP
 cd ~/whatsapp-api
 nohup node src/index.js > logs/server.log 2>&1 &
@@ -435,19 +435,19 @@ nohup node src/index.js > logs/server.log 2>&1 &
 
 ---
 
-## 📊 Error Codes
+## 📊 Hata Kodları
 
-| Code | Description |
+| Kod | Açıklama |
 |---|---|
-| `400` | Missing parameter |
-| `401` | Invalid token |
-| `403` | Account inactive or expired |
-| `429` | Daily limit exceeded |
-| `500` | Server error |
+| `400` | Eksik parametre |
+| `401` | Geçersiz token |
+| `403` | Hesap pasif veya süresi dolmuş |
+| `429` | Günlük limit aşıldı |
+| `500` | Sunucu hatası |
 
 ---
 
-## 📞 Contact & Support
+## 📞 İletişim & Destek
 
 - 🌐 [waport.wizaicorp.com](https://waport.wizaicorp.com)
 - 💬 WhatsApp: [+90 553 093 03 25](https://wa.me/905530930325)
