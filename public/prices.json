@@ -62,13 +62,13 @@
       "name_en": "Ultra",
       "price_try": 650,
       "price_usd": 18,
-      "limit": 9999,
+      "limit": 5000,
       "period_tr": "ay",
       "period_en": "month",
       "desc_tr": "Yoğun kullanım ve otomasyon projeleri için",
       "desc_en": "For heavy usage and automation projects",
       "features_tr": [
-        "Günlük sınırsız mesaj",
+        "Günlük 5.000 mesaj",
         "Tüm medya türleri",
         "API token erişimi",
         "Toplu mesaj + rehber yönetimi",
@@ -76,7 +76,7 @@
         "Özel entegrasyon desteği"
       ],
       "features_en": [
-        "Unlimited messages/day",
+        "5,000 messages/day",
         "All media types",
         "API token access",
         "Bulk message + contact management",
