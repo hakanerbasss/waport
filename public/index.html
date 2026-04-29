@@ -1628,6 +1628,7 @@ function render() {
     }
   });
 
+  renderLabels();
   renderScenarios();
   renderSteps();
   renderApiTabs();
@@ -2026,6 +2027,16 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+
+const sectionLabels = {"tr": {"label-scenarios": "Kullanım", "label-howto": "Süreç", "label-api": "Developer", "label-features": "Özellikler", "label-why": "Avantaj", "label-pricing": "Fiyatlar", "label-faq": "SSS"}, "en": {"label-scenarios": "Use Cases", "label-howto": "Process", "label-api": "Developer", "label-features": "Features", "label-why": "Advantage", "label-pricing": "Pricing", "label-faq": "FAQ"}};
+function renderLabels() {
+  const l = sectionLabels[lang] || sectionLabels["en"];
+  Object.keys(l).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = l[id];
+  });
+}
 
 // ── INIT ─────────────────────────────────────
 loadData();
