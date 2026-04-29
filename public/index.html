@@ -1279,6 +1279,23 @@ footer {
   .cta-btns { flex-direction: column; align-items: center; }
   .hero-btns { flex-direction: column; }
 }
+
+/* NON-DEV CARD */
+#nondev-card { padding: 0 24px 60px; }
+.nondev-wrap { max-width: 1200px; margin: 0 auto; background: linear-gradient(135deg, rgba(37,211,102,0.08) 0%, rgba(18,140,126,0.06) 100%); border: 1px solid var(--border2); border-radius: var(--r2); padding: 48px; position: relative; overflow: hidden; }
+.nondev-wrap::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--wa-green), var(--wa-teal)); }
+.nondev-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; }
+.nondev-sub { font-size: 1rem; color: var(--text2); margin-bottom: 32px; }
+.nondev-steps { display: flex; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+.nondev-step { display: flex; align-items: flex-start; gap: 12px; flex: 1; min-width: 200px; }
+.nondev-step-icon { font-size: 1.8rem; flex-shrink: 0; }
+.nondev-step-text strong { display: block; font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+.nondev-step-text span { font-size: 0.85rem; color: var(--text2); }
+.nondev-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.nondev-tag { background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.2); color: var(--accent); font-size: 0.8rem; font-weight: 600; padding: 5px 12px; border-radius: 100px; }
+.nondev-note { font-size: 0.9rem; color: var(--text2); line-height: 1.7; padding: 16px 20px; background: rgba(255,255,255,0.03); border-left: 3px solid var(--accent); border-radius: 0 var(--r) var(--r) 0; margin-bottom: 28px; }
+.nondev-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 600px) { .nondev-wrap { padding: 28px 20px; } .nondev-steps { flex-direction: column; gap: 16px; } }
 </style>
 </head>
 <body>
@@ -1401,6 +1418,10 @@ footer {
     <div class="scenarios-grid" id="scenariosGrid"></div>
   </div>
 </section>
+
+
+<!-- Non-dev kart -->
+<div id="nondev-card"></div>
 
 <!-- ═══════════════════════════════════════════
      HOW IT WORKS
@@ -1579,7 +1600,7 @@ footer {
 ═══════════════════════════════════════════ -->
 <script>
 // ── STATE ──────────────────────────────────
-let lang = 'en';
+let lang = 'tr';
 let theme = 'dark';
 let i18n = {};
 let prices = {};
@@ -1635,6 +1656,7 @@ function render() {
   renderFeatures();
   renderWhy();
   renderPricing();
+  renderNonDev();
   renderFaq();
 }
 
@@ -1921,6 +1943,45 @@ function renderPricing() {
       </div>
     `;
   }
+}
+
+
+// NON-DEV CARD
+function renderNonDev() {
+  const el = document.getElementById('nondev-card');
+  if (!el) return;
+  const isTr = lang === 'tr';
+  const steps = isTr ? [
+    { icon: '📲', title: 'WhatsApp\'ınızı Bağlayın', desc: 'QR kod ile 1 dakikada bağlantı kurulur' },
+    { icon: '📋', title: 'Listenizi Yükleyin', desc: 'Müşteri listesi veya Excel dosyası' },
+    { icon: '💬', title: 'Mesajınızı Gönderin', desc: 'Tek tek veya toplu — siz seçin' }
+  ] : [
+    { icon: '📲', title: 'Connect WhatsApp', desc: 'Link via QR code in 1 minute' },
+    { icon: '📋', title: 'Upload Your List', desc: 'Customer list or Excel file' },
+    { icon: '💬', title: 'Send Your Message', desc: 'One by one or bulk — your choice' }
+  ];
+  const tags = isTr
+    ? ['Kampanya duyurusu', 'Randevu hatırlatma', 'Sipariş bildirimi', 'Yeni ürün haberi', 'Reklam & Tanıtım', 'Toplu bildirim']
+    : ['Campaign announcement', 'Appointment reminder', 'Order notification', 'New product news', 'Ads & Promotion', 'Bulk notification'];
+  el.innerHTML = `
+    <div class="nondev-wrap fade-up">
+      <div class="nondev-title">${isTr ? '📱 Geliştirici değil misiniz?' : '📱 Not a developer?'}</div>
+      <div class="nondev-sub">${isTr ? 'Kod bilmeden WhatsApp ile müşterilerinize mesaj gönderin.' : 'Send WhatsApp messages to your customers without any coding.'}</div>
+      <div class="nondev-steps">
+        ${steps.map((s, i) => `<div class="nondev-step"><div class="nondev-step-icon">${s.icon}</div><div class="nondev-step-text"><strong>${i+1}. ${s.title}</strong><span>${s.desc}</span></div></div>`).join('')}
+      </div>
+      <div class="nondev-tags">
+        ${tags.map(t => `<span class="nondev-tag">${t}</span>`).join('')}
+      </div>
+      <div class="nondev-note">
+        ${isTr ? 'Kendi işinizi tanıtın, kampanyalarınızı duyurun, müşterilerinizi haberdar edin — hepsi WhatsApp üzerinden, tek yerden. Excel listeniz varsa direkt kullanabilirsiniz.' : 'Promote your business, announce campaigns, keep customers informed — all via WhatsApp, from one place. Excel list works directly.'}
+      </div>
+      <div class="nondev-btns">
+        <a href="https://wa.wizaicorp.com/kayit" target="_blank" class="btn-primary" onclick="window.open(this.href,'_blank');return false;">🚀 ${isTr ? 'Ücretsiz Dene' : 'Try Free'}</a>
+        <a href="https://wa.me/905530930325" target="_blank" class="btn-wa" onclick="window.open(this.href,'_blank');return false;">💬 ${isTr ? "WhatsApp'tan Sor" : 'Ask on WhatsApp'}</a>
+      </div>
+    </div>
+  `;
 }
 
 // ── FAQ ──────────────────────────────────────
