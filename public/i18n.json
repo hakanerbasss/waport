@@ -146,6 +146,18 @@
           "a": "Ban riski kullanım şekline bağlıdır. Spam yapmadığın sürece düşüktür. Sistem kurulum paketinde her müşteri kendi IP'sinde çalıştığı için riskler birbirini etkilemez. Toplu mesaj gönderirken aralıklar bırakmanı öneririz."
         },
         {
+          "q": "Hangi sunucuyu öneriyorsunuz?",
+          "a": "Türkiye'de kullanım için Dehost.com.tr öneriyoruz. Türk sunucusu olduğu için WhatsApp bağlantısında 'dolandırıcılık' uyarısı çıkmaz, fatura kesiyor ve KVKK uyumlu. Yabancı sunucularda (Almanya, ABD vb.) WhatsApp bazen güvenlik uyarısı gösterebiliyor."
+        },
+        {
+          "q": "HTTPS nasıl sağlanır?",
+          "a": "Kurulum sırasında Port 80 seçmenizi öneririz. Ardından Cloudflare'den bir subdomain (örn: wa.sirketiniz.com) tanımladığınızda otomatik olarak HTTPS aktif olur ve URL'de port numarası görünmez. Port 3000 ile de çalışır ama URL'de ':3000' görünür."
+        },
+        {
+          "q": "WhatsApp'ımı bağlayamıyorum.",
+          "a": "Bağlanmak istediğiniz numaranın daha önce en az bir kez WhatsApp Web veya masaüstü uygulamasına bağlanmış olması gerekir. Hiç web bağlantısı yapılmamış numaralar sisteme bağlanamayabilir. Önce resmi WhatsApp Web'den (web.whatsapp.com) bir kez bağlanıp çıkış yapın, ardından tekrar deneyin."
+        },
+        {
           "q": "Teknik bilgi gerekiyor mu?",
           "a": "Abone planı için hayır — panel üzerinden QR bağla, mesaj gönder. Sistem kurulumu için temel VPS/Linux bilgisi yeterli. Kurulum dahil teslim ediyoruz."
         },
@@ -327,6 +339,18 @@
         {
           "q": "Will my WhatsApp number get banned?",
           "a": "Ban risk depends on usage. It's low if you're not spamming. With the system package, each customer runs on their own IP so risks don't affect each other. We recommend adding delays between bulk messages."
+        },
+        {
+          "q": "Which server do you recommend?",
+          "a": "For Turkish users, we recommend Dehost.com.tr — a Turkish hosting provider that issues invoices and is KVKK compliant. Foreign servers (Germany, US, etc.) may cause WhatsApp to show a security warning during connection."
+        },
+        {
+          "q": "How do I get HTTPS?",
+          "a": "We recommend selecting Port 80 during installation. Then add a subdomain via Cloudflare (e.g. wa.yourcompany.com) and HTTPS activates automatically — no port number in the URL. Port 3000 also works but shows ':3000' in the URL."
+        },
+        {
+          "q": "I can't connect my WhatsApp.",
+          "a": "The number you want to connect must have been linked to WhatsApp Web or the desktop app at least once before. Numbers that have never been used on web may fail to connect. First connect via official WhatsApp Web (web.whatsapp.com), log out, then try again."
         },
         {
           "q": "Is technical knowledge required?",
