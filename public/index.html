@@ -193,38 +193,7 @@ nav {
   display: flex; align-items: center; justify-content: center;
   transition: all var(--transition);
 }
-.btn-mode {
-  background: rgba(37,211,102,0.08);
-  border: 1px solid var(--border2);
-  color: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: all var(--transition);
-  font-family: var(--font-display);
-  cursor: pointer;
-  white-space: nowrap;
-}
-.btn-mode:hover { background: rgba(37,211,102,0.15); }
-.btn-mode.user-mode {
-  background: var(--surface);
-  color: var(--text2);
-  border-color: var(--border);
-}
-/* Dev-only sections hidden in user mode */
-body.user-mode #api { display: none; }
-body.user-mode .hero-visual { display: none; }
-body.user-mode .hero-inner { grid-template-columns: 1fr; }
-body.user-mode .hero-inner .hero-content { max-width: 680px; margin: 0 auto; text-align: center; }
-body.user-mode .hero-content p { margin: 0 auto 36px; }
-body.user-mode .hero-btns { justify-content: center; }
-body.user-mode .hero-stats { justify-content: center; }
-/* dev-only butonları kullanıcı modunda gizle */
-body.user-mode .dev-only { display: none; }
-/* user-only butonları geliştirici modunda gizle */
-body:not(.user-mode) #heroBtnRegister { display: none; }
-
+.btn-theme:hover { border-color: var(--accent); color: var(--accent); }
 .btn-nav-cta {
   background: var(--accent);
   color: #0a0f0d;
@@ -285,10 +254,10 @@ body:not(.user-mode) #heroBtnRegister { display: none; }
    HERO
 ═══════════════════════════════════════════ */
 .hero {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: 100px 24px 80px;
+  padding: 80px 24px 40px;
   position: relative;
   overflow: hidden;
 }
@@ -316,7 +285,7 @@ body:not(.user-mode) #heroBtnRegister { display: none; }
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 40px;
   align-items: center;
 }
 .hero-badge {
@@ -347,7 +316,7 @@ body:not(.user-mode) #heroBtnRegister { display: none; }
 }
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.3rem, 4vw, 2.8rem);
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -530,7 +499,7 @@ body:not(.user-mode) #heroBtnRegister { display: none; }
 /* ═══════════════════════════════════════════
    SCENARIOS
 ═══════════════════════════════════════════ */
-#scenarios { padding: 100px 0; }
+#scenarios { padding: 60px 0; }
 .scenarios-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -581,7 +550,7 @@ body:not(.user-mode) #heroBtnRegister { display: none; }
    HOW IT WORKS
 ═══════════════════════════════════════════ */
 #howto {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg2);
 }
 .steps-row {
@@ -642,7 +611,7 @@ body:not(.user-mode) #heroBtnRegister { display: none; }
 /* ═══════════════════════════════════════════
    API SECTION
 ═══════════════════════════════════════════ */
-#api { padding: 100px 0; }
+#api { padding: 60px 0; }
 .api-inner {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -750,7 +719,7 @@ body:not(.user-mode) #heroBtnRegister { display: none; }
    FEATURES
 ═══════════════════════════════════════════ */
 #features {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg2);
 }
 .features-grid {
@@ -788,7 +757,7 @@ body:not(.user-mode) #heroBtnRegister { display: none; }
 /* ═══════════════════════════════════════════
    WHY
 ═══════════════════════════════════════════ */
-#why { padding: 100px 0; }
+#why { padding: 60px 0; }
 .why-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -831,7 +800,7 @@ body:not(.user-mode) #heroBtnRegister { display: none; }
    PRICING
 ═══════════════════════════════════════════ */
 #pricing {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg2);
 }
 .pricing-tabs {
@@ -1082,7 +1051,7 @@ body:not(.user-mode) #heroBtnRegister { display: none; }
 /* ═══════════════════════════════════════════
    FAQ
 ═══════════════════════════════════════════ */
-#faq { padding: 100px 0; }
+#faq { padding: 60px 0; }
 .faq-list {
   max-width: 720px;
   margin: 0 auto;
@@ -1147,7 +1116,7 @@ body:not(.user-mode) #heroBtnRegister { display: none; }
    CTA SECTION
 ═══════════════════════════════════════════ */
 #cta {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg2);
   text-align: center;
   position: relative;
@@ -1331,7 +1300,6 @@ footer {
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-controls">
-      <button class="btn-mode" id="modeToggle" title="Mod değiştir">💻 Geliştirici</button>
       <button class="btn-lang" id="langToggle">EN</button>
       <button class="btn-theme" id="themeToggle" title="Toggle theme">🌙</button>
       <a href="#cta" class="btn-nav-cta" data-i18n="hero.cta_demo">Demo Dene</a>
@@ -1350,7 +1318,6 @@ footer {
   <a href="#pricing" data-i18n="nav.pricing">Fiyatlar</a>
   <a href="#faq">FAQ</a>
   <div class="mobile-controls">
-    <button class="btn-mode" id="modeToggleMobile">💻 Dev</button>
     <button class="btn-lang" id="langToggleMobile">EN</button>
     <button class="btn-theme" id="themeToggleMobile">🌙</button>
   </div>
@@ -1366,12 +1333,11 @@ footer {
     <div class="hero-content">
       <div class="hero-badge" data-i18n="hero.badge">Self-Hosted WhatsApp API</div>
       <h1 data-i18n-html="hero.title">WhatsApp'ı<br><span class="accent">Her Şeye Bağla</span></h1>
-      <p id="heroSubtitle" data-i18n="hero.subtitle">Excel'den, yazılımından, her projenden WhatsApp mesajı gönder. Kendi sunucunda çalışır, veriler sende kalır.</p>
+      <p data-i18n="hero.subtitle">Excel'den, yazılımından, her projenden WhatsApp mesajı gönder. Kendi sunucunda çalışır, veriler sende kalır.</p>
       <div class="hero-btns">
-        <a href="https://wa.wizaicorp.com/kayit" target="_blank" class="btn-primary" id="heroBtnRegister">🚀 Ücretsiz Başla</a>
-        <a href="#cta" class="btn-secondary" data-i18n="hero.cta_subscribe">▶ Hemen Abone Ol</a>
-        <a href="#pricing" class="btn-secondary dev-only" data-i18n="hero.cta_system">📦 Sistemi Satın Al</a>
-        <a href="https://wa.wizaicorp.com/kayit" target="_blank" class="btn-ghost dev-only" data-i18n="hero.cta_demo">Ücretsiz Demo →</a>
+        <a href="#cta" class="btn-primary" data-i18n="hero.cta_subscribe">▶ Hemen Abone Ol</a>
+        <a href="#pricing" class="btn-secondary" data-i18n="hero.cta_system">📦 Sistemi Satın Al</a>
+        <a href="https://wa.wizaicorp.com/kayit" target="_blank" class="btn-ghost" data-i18n="hero.cta_demo">Ücretsiz Demo →</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
@@ -1428,7 +1394,7 @@ footer {
 <section id="scenarios">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-label">Kullanım</span>
+      <span class="section-label" id="label-scenarios"></span>
       <h2 class="section-title" data-i18n="scenarios.title">Kim Kullanır?</h2>
       <p class="section-sub" data-i18n="scenarios.subtitle">WhatsApp kullanan herkes. Teknik bilgi gerekmez.</p>
     </div>
@@ -1442,7 +1408,7 @@ footer {
 <section id="howto">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-label">Süreç</span>
+      <span class="section-label" id="label-howto"></span>
       <h2 class="section-title" data-i18n="howto.title">Nasıl Çalışır?</h2>
       <p class="section-sub" data-i18n="howto.subtitle">3 adımda başla, dakikalar içinde mesaj gönder.</p>
     </div>
@@ -1457,7 +1423,7 @@ footer {
   <div class="container">
     <div class="api-inner">
       <div>
-        <span class="section-label">Developer</span>
+        <span class="section-label" id="label-api"></span>
         <h2 class="section-title" data-i18n="api.title">Geliştirici Dostu API</h2>
         <p class="section-sub" style="margin:0 0 32px" data-i18n="api.subtitle">Token al, istek at, mesaj gönder. Bu kadar.</p>
         <div class="endpoint-list">
@@ -1497,7 +1463,7 @@ footer {
 <section id="features">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-label">Özellikler</span>
+      <span class="section-label" id="label-features"></span>
       <h2 class="section-title" data-i18n="features.title">Her Şey Dahil</h2>
       <p class="section-sub" data-i18n="features.subtitle">Mesajlaşmadan otomasyona, tüm araçlar hazır.</p>
     </div>
@@ -1511,7 +1477,7 @@ footer {
 <section id="why">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-label">Avantaj</span>
+      <span class="section-label" id="label-why"></span>
       <h2 class="section-title" data-i18n="why.title">Neden Kendi Sunucun?</h2>
     </div>
     <div class="why-grid" id="whyGrid"></div>
@@ -1524,7 +1490,7 @@ footer {
 <section id="pricing">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-label">Fiyatlar</span>
+      <span class="section-label" id="label-pricing"></span>
       <h2 class="section-title" data-i18n="pricing.title">Fiyatlandırma</h2>
       <p class="section-sub" data-i18n="pricing.subtitle">İster abone ol, ister sistemi kur ve bayi ol.</p>
     </div>
@@ -1547,7 +1513,7 @@ footer {
 <section id="faq">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-label">SSS</span>
+      <span class="section-label" id="label-faq"></span>
       <h2 class="section-title" data-i18n="faq.title">Sık Sorulan Sorular</h2>
     </div>
     <div class="faq-list" id="faqList"></div>
@@ -1563,7 +1529,7 @@ footer {
     <p class="cta-sub fade-up" data-i18n="cta.subtitle">50 mesaj ücretsiz demo. Kredi kartı gerekmez.</p>
     <div class="cta-btns fade-up">
       <a href="https://wa.wizaicorp.com/kayit" target="_blank" class="btn-primary" data-i18n="cta.btn_demo">▶ Ücretsiz Demo Al</a>
-      <a href="https://wa.me/905XXXXXXXXX" target="_blank" class="btn-wa" data-i18n="cta.btn_whatsapp">
+      <a href="https://wa.me/905530930325" onclick="window.open(this.href,'_blank');return false;" target="_blank" class="btn-wa" data-i18n="cta.btn_whatsapp">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span data-i18n="cta.btn_whatsapp">WhatsApp'tan Yaz</span>
       </a>
@@ -1596,8 +1562,8 @@ footer {
     <div>
       <div class="footer-col-title" data-i18n="footer.contact_title">İletişim</div>
       <ul class="footer-links">
-        <li><a href="https://wa.me/905XXXXXXXXX" target="_blank">WhatsApp</a></li>
-        <li><a href="mailto:info@wizaicorp.com">info@wizaicorp.com</a></li>
+        <li><a href="https://wa.me/905530930325" onclick="window.open(this.href,'_blank');return false;" target="_blank">WhatsApp</a></li>
+        <li><a href="mailto:wizaicorp@gmail.com">wizaicorp@gmail.com</a></li>
         <li><a href="https://wa.wizaicorp.com" target="_blank">Panel Girişi</a></li>
       </ul>
     </div>
@@ -1613,12 +1579,11 @@ footer {
 ═══════════════════════════════════════════ -->
 <script>
 // ── STATE ──────────────────────────────────
-let lang = 'tr';
+let lang = 'en';
 let theme = 'dark';
 let i18n = {};
 let prices = {};
 let activeApiTab = 0;
-let devMode = false;
 
 // ── FETCH DATA ─────────────────────────────
 async function loadData() {
@@ -1653,40 +1618,15 @@ function render() {
   });
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     const key = el.getAttribute('data-i18n-html');
+    const val = t(key);
     if (key === 'hero.title') {
-      if (!devMode) {
-        // Kullanıcı modu — sade başlık
-        el.innerHTML = lang === 'tr'
-          ? 'Müşterilerinize<br><span class="accent">WhatsApp\'tan Mesaj Gönderin</span>'
-          : 'Send WhatsApp Messages<br><span class="accent">to Your Customers</span>';
-      } else {
-        // Geliştirici modu
-        el.innerHTML = lang === 'tr'
-          ? 'WhatsApp\'ı<br><span class="accent">Her Şeye Bağla</span>'
-          : 'Connect WhatsApp<br><span class="accent">to Everything</span>';
-      }
+      el.innerHTML = lang === 'tr'
+        ? 'WhatsApp\'ı<br><span class="accent">Her Şeye Bağla</span>'
+        : 'Connect WhatsApp<br><span class="accent">to Everything</span>';
     } else {
-      el.textContent = t(key);
+      el.textContent = val;
     }
   });
-  // Mode toggle buton metni güncelle
-  const modeBtn = document.getElementById('modeToggle');
-  if (modeBtn) {
-    modeBtn.textContent = devMode
-      ? (lang === 'tr' ? '👤 Kullanıcı' : '👤 User')
-      : (lang === 'tr' ? '💻 Geliştirici' : '💻 Developer');
-  }
-  // Hero subtitle güncelle
-  const subtitle = document.getElementById('heroSubtitle');
-  if (subtitle) {
-    if (!devMode) {
-      subtitle.textContent = lang === 'tr'
-        ? 'Kampanya, randevu, bildirim... Müşterilerinize WhatsApp\'tan kolayca mesaj gönderin. Teknik bilgi gerekmez.'
-        : 'Campaigns, reminders, notifications... Send WhatsApp messages to your customers easily. No technical knowledge required.';
-    } else {
-      subtitle.textContent = t('hero.subtitle');
-    }
-  }
 
   renderLabels();
   renderScenarios();
@@ -1940,7 +1880,7 @@ function renderPricing() {
         <ul class="plan-features">
           ${(isEn ? plan.features_en : plan.features_tr).map(f => `<li>${f}</li>`).join('')}
         </ul>
-        <a href="https://wa.me/905XXXXXXXXX?text=${encodeURIComponent((isEn ? plan.name_en : plan.name_tr) + ' planı hakkında bilgi almak istiyorum')}" 
+        <a href="https://wa.me/905530930325?text=${encodeURIComponent((isEn ? plan.name_en : plan.name_tr) + ' planı hakkında bilgi almak istiyorum')}" 
            target="_blank" 
            class="plan-cta ${plan.highlight ? 'plan-cta-primary' : 'plan-cta-secondary'}">
           ${t('pricing.cta_subscribe')}
@@ -1974,7 +1914,7 @@ function renderPricing() {
           ${features.map(f => `<div class="system-feature">${f}</div>`).join('')}
         </div>
         <div class="system-cta-row">
-          <a href="https://wa.me/905XXXXXXXXX?text=${encodeURIComponent('WaPort sistem satın alma hakkında bilgi almak istiyorum')}" 
+          <a href="https://wa.me/905530930325?text=${encodeURIComponent('WaPort sistem satın alma hakkında bilgi almak istiyorum')}" 
              target="_blank" class="btn-primary">${t('pricing.cta_system')}</a>
           <a href="https://github.com/hakanerbasss/waport" target="_blank" class="btn-secondary">GitHub'da İncele</a>
         </div>
@@ -2052,21 +1992,6 @@ function toggleTheme() {
 document.getElementById('themeToggle').addEventListener('click', toggleTheme);
 document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
 
-// ── MODE TOGGLE ──────────────────────────────
-function toggleMode() {
-  devMode = !devMode;
-  if (devMode) {
-    document.body.classList.remove('user-mode');
-    document.getElementById('modeToggle').classList.remove('user-mode');
-  } else {
-    document.body.classList.add('user-mode');
-    document.getElementById('modeToggle').classList.add('user-mode');
-  }
-  render();
-}
-document.getElementById('modeToggle').addEventListener('click', toggleMode);
-document.getElementById('modeToggleMobile').addEventListener('click', toggleMode);
-
 // ── HAMBURGER ────────────────────────────────
 document.getElementById('hamburger').addEventListener('click', () => {
   const menu = document.getElementById('mobileMenu');
@@ -2103,10 +2028,17 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
+
+const sectionLabels = {"tr": {"label-scenarios": "Kullanım", "label-howto": "Süreç", "label-api": "Developer", "label-features": "Özellikler", "label-why": "Avantaj", "label-pricing": "Fiyatlar", "label-faq": "SSS"}, "en": {"label-scenarios": "Use Cases", "label-howto": "Process", "label-api": "Developer", "label-features": "Features", "label-why": "Advantage", "label-pricing": "Pricing", "label-faq": "FAQ"}};
+function renderLabels() {
+  const l = sectionLabels[lang] || sectionLabels["en"];
+  Object.keys(l).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = l[id];
+  });
+}
+
 // ── INIT ─────────────────────────────────────
-// Varsayılan: kullanıcı modu
-document.body.classList.add('user-mode');
-document.getElementById('modeToggle').classList.add('user-mode');
 loadData();
 observeFadeUps();
 </script>
