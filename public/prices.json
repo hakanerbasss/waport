@@ -1,0 +1,118 @@
+{
+  "subscription": [
+    {
+      "id": "basic",
+      "name_tr": "Basic",
+      "name_en": "Basic",
+      "price_try": 300,
+      "price_usd": 9,
+      "limit": 500,
+      "period_tr": "ay",
+      "period_en": "month",
+      "desc_tr": "Bireysel kullanım ve küçük işletmeler için",
+      "desc_en": "For individuals and small businesses",
+      "features_tr": [
+        "Günlük 500 mesaj",
+        "Metin, resim, video, ses, dosya",
+        "API token erişimi",
+        "Toplu mesaj paneli",
+        "WhatsApp QR/Pairing bağlantı"
+      ],
+      "features_en": [
+        "500 messages/day",
+        "Text, image, video, audio, file",
+        "API token access",
+        "Bulk message panel",
+        "WhatsApp QR/Pairing connect"
+      ],
+      "highlight": false,
+      "color": "#25D366"
+    },
+    {
+      "id": "pro",
+      "name_tr": "Pro",
+      "name_en": "Pro",
+      "price_try": 450,
+      "price_usd": 13,
+      "limit": 2000,
+      "period_tr": "ay",
+      "period_en": "month",
+      "desc_tr": "Büyüyen işletmeler ve aktif kullanıcılar için",
+      "desc_en": "For growing businesses and active users",
+      "features_tr": [
+        "Günlük 2.000 mesaj",
+        "Tüm medya türleri",
+        "API token erişimi",
+        "Toplu mesaj + rehber yönetimi",
+        "Öncelikli destek"
+      ],
+      "features_en": [
+        "2,000 messages/day",
+        "All media types",
+        "API token access",
+        "Bulk message + contact management",
+        "Priority support"
+      ],
+      "highlight": true,
+      "color": "#128C7E"
+    },
+    {
+      "id": "ultra",
+      "name_tr": "Ultra",
+      "name_en": "Ultra",
+      "price_try": 650,
+      "price_usd": 18,
+      "limit": 9999,
+      "period_tr": "ay",
+      "period_en": "month",
+      "desc_tr": "Yoğun kullanım ve otomasyon projeleri için",
+      "desc_en": "For heavy usage and automation projects",
+      "features_tr": [
+        "Günlük sınırsız mesaj",
+        "Tüm medya türleri",
+        "API token erişimi",
+        "Toplu mesaj + rehber yönetimi",
+        "7/24 öncelikli destek",
+        "Özel entegrasyon desteği"
+      ],
+      "features_en": [
+        "Unlimited messages/day",
+        "All media types",
+        "API token access",
+        "Bulk message + contact management",
+        "24/7 priority support",
+        "Custom integration support"
+      ],
+      "highlight": false,
+      "color": "#075E54"
+    }
+  ],
+  "system": {
+    "price_try": 8500,
+    "price_usd": 240,
+    "license_yearly_try": 1500,
+    "license_yearly_usd": 42,
+    "desc_tr": "Kendi sunucuna kur, kendi müşterini topla, bayi ol",
+    "desc_en": "Install on your server, collect your own customers, become a reseller",
+    "features_tr": [
+      "Tam kaynak kodu (Node.js)",
+      "Sınırsız müşteri / abone",
+      "Admin panel + müşteri dashboard",
+      "Kendi markanla kullan (white-label)",
+      "Termux, VPS, Linux desteği",
+      "Kurulum dahil teslim",
+      "İlk 30 gün teknik destek",
+      "Yıllık güncelleme lisansı"
+    ],
+    "features_en": [
+      "Full source code (Node.js)",
+      "Unlimited customers / subscribers",
+      "Admin panel + customer dashboard",
+      "Use with your own brand (white-label)",
+      "Termux, VPS, Linux support",
+      "Delivered with installation",
+      "30-day technical support",
+      "Annual update license"
+    ]
+  }
+}

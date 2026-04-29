@@ -1,0 +1,368 @@
+{
+  "tr": {
+    "nav": {
+      "features": "Özellikler",
+      "howto": "Nasıl Çalışır",
+      "pricing": "Fiyatlar",
+      "docs": "API Dokümantasyon",
+      "demo": "Demo Dene",
+      "contact": "İletişim"
+    },
+    "hero": {
+      "badge": "Self-Hosted WhatsApp API",
+      "title": "WhatsApp'ı Her Şeye Bağla",
+      "subtitle": "Excel'den, yazılımından, her projenden WhatsApp mesajı gönder. Kendi sunucunda çalışır, veriler sende kalır, aylık abonelik veya sistemi satın al.",
+      "cta_subscribe": "Hemen Abone Ol",
+      "cta_system": "Sistemi Satın Al",
+      "cta_demo": "Ücretsiz Demo",
+      "stat_messages": "Günlük Mesaj",
+      "stat_media": "Medya Türü",
+      "stat_setup": "Kurulum"
+    },
+    "scenarios": {
+      "title": "Kim Kullanır?",
+      "subtitle": "WhatsApp kullanan herkes. Teknik bilgi gerekmez.",
+      "items": [
+        {
+          "icon": "🕯️",
+          "title": "El Yapımı Ürün Satıcısı",
+          "desc": "Mum, takı, sabun... Müşteri listene 'yeni koleksiyon geldi' mesajını bir tıkla gönder."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Restoran / Kafe",
+          "desc": "Günlük menüyü, kampanyaları, rezervasyon hatırlatmalarını otomatik gönder."
+        },
+        {
+          "icon": "📊",
+          "title": "Excel Kullanan Herkes",
+          "desc": "VBA ile API çağrısı yap. Excel listenden doğrudan WhatsApp mesajı gönder, kod bilmene gerek yok."
+        },
+        {
+          "icon": "🏪",
+          "title": "E-Ticaret / Mağaza",
+          "desc": "Sipariş bildirimi, kargo takibi, kampanya duyurusu. Otomatik entegrasyon."
+        },
+        {
+          "icon": "💻",
+          "title": "Yazılımcı / Ajans",
+          "desc": "Sistemi kur, müşteri topla, bayi ol. HTTP API ile her projeye entegre et."
+        },
+        {
+          "icon": "🏢",
+          "title": "Kurumsal Şirket",
+          "desc": "Kendi sunucunda, kendi IP'nde çalış. Veri gizliliği, KVKK uyumu, sınırsız kontrol."
+        }
+      ]
+    },
+    "howto": {
+      "title": "Nasıl Çalışır?",
+      "subtitle": "3 adımda başla, dakikalar içinde mesaj gönder.",
+      "steps": [
+        {
+          "num": "01",
+          "title": "WhatsApp'ını Bağla",
+          "desc": "QR kod veya pairing code ile mevcut WhatsApp numaranı bağla. Telefon uygulaması çalışmaya devam eder."
+        },
+        {
+          "num": "02",
+          "title": "Token'ını Al",
+          "desc": "Dashboard'dan API token'ını kopyala. Bu token ile her yerden mesaj gönderebilirsin."
+        },
+        {
+          "num": "03",
+          "title": "Entegre Et & Gönder",
+          "desc": "curl, Python, Node.js, Excel VBA, n8n... HTTP isteği atabilen her şey çalışır."
+        }
+      ]
+    },
+    "api": {
+      "title": "Geliştirici Dostu API",
+      "subtitle": "Token al, istek at, mesaj gönder. Bu kadar.",
+      "tabs": ["cURL", "Python", "Node.js", "Excel VBA", "n8n"]
+    },
+    "features": {
+      "title": "Her Şey Dahil",
+      "subtitle": "Mesajlaşmadan otomasyona, tüm araçlar hazır.",
+      "items": [
+        { "icon": "💬", "title": "Metin Mesajı", "desc": "Tek veya toplu metin mesajı gönder" },
+        { "icon": "🖼️", "title": "Resim & Video", "desc": "URL veya direkt dosya yükle" },
+        { "icon": "🎵", "title": "Ses Dosyası", "desc": "Sesli mesaj ve audio dosyası" },
+        { "icon": "📎", "title": "Dosya Gönder", "desc": "PDF, Excel, Word, her format" },
+        { "icon": "📋", "title": "Toplu Mesaj", "desc": "Rehberden seç, listeye gönder" },
+        { "icon": "🔑", "title": "API Token", "desc": "Bearer auth, her dilde çalışır" },
+        { "icon": "👥", "title": "Multi-Müşteri", "desc": "Her müşteri kendi numarasını bağlar" },
+        { "icon": "📦", "title": "Paket Yönetimi", "desc": "Limit, süre, plan otomatik yönetimi" },
+        { "icon": "🔔", "title": "Otomatik Bildirim", "desc": "Plan yükseltmede WhatsApp bildirimi" },
+        { "icon": "🛡️", "title": "Kara Liste", "desc": "Demo kötüye kullanımını engelle" },
+        { "icon": "📱", "title": "QR / Pairing", "desc": "Telefonsuz da bağlanma imkanı" },
+        { "icon": "🔄", "title": "Auto-Reconnect", "desc": "Bağlantı kesilirse otomatik yeniden bağlan" }
+      ]
+    },
+    "why": {
+      "title": "Neden Kendi Sunucun?",
+      "items": [
+        {
+          "icon": "🛡️",
+          "title": "Ban Riski Sıfır (Senin İçin)",
+          "desc": "Her müşteri kendi VPS'inde, kendi IP'sinde çalışır. Birinin hatası seni etkilemez."
+        },
+        {
+          "icon": "🔒",
+          "title": "Veri Güvenliği & KVKK",
+          "desc": "Müşteri verilerin başka bir sunucuya gitmiyor. Tam KVKK uyumu, veri senin elinde."
+        },
+        {
+          "icon": "♾️",
+          "title": "Sınırsız Kontrol",
+          "desc": "Paket limitlerini, fiyatları, özellikleri istediğin gibi ayarla. Kimseye bağımlı değilsin."
+        },
+        {
+          "icon": "💰",
+          "title": "Aylık Abonelik Yok (Sistem Sahibi)",
+          "desc": "Bir kere al, ömür boyu kullan. Abone topla, kendi gelirinle büyü."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Fiyatlandırma",
+      "subtitle": "İster abone ol, ister sistemi kur ve bayi ol.",
+      "tab_subscribe": "Abone Planları",
+      "tab_system": "Sistemi Satın Al",
+      "per_month": "/ ay",
+      "per_year": "/ yıl",
+      "popular": "En Popüler",
+      "cta_subscribe": "Şimdi Başla",
+      "cta_system": "Satın Al & Kur",
+      "system_title": "Sistem Kurulum Paketi",
+      "license_title": "+ Yıllık Lisans",
+      "license_desc": "Güncelleme ve teknik destek için opsiyonel yıllık lisans"
+    },
+    "faq": {
+      "title": "Sık Sorulan Sorular",
+      "items": [
+        {
+          "q": "WhatsApp numaram banlanır mı?",
+          "a": "Ban riski kullanım şekline bağlıdır. Spam yapmadığın sürece düşüktür. Sistem kurulum paketinde her müşteri kendi IP'sinde çalıştığı için riskler birbirini etkilemez. Toplu mesaj gönderirken aralıklar bırakmanı öneririz."
+        },
+        {
+          "q": "Teknik bilgi gerekiyor mu?",
+          "a": "Abone planı için hayır — panel üzerinden QR bağla, mesaj gönder. Sistem kurulumu için temel VPS/Linux bilgisi yeterli. Kurulum dahil teslim ediyoruz."
+        },
+        {
+          "q": "Excel'den nasıl kullanırım?",
+          "a": "Excel VBA ile HTTP POST isteği atabilirsin. API token'ını al, örnek kodu yapıştır, telefon numaralarını ve mesajını gir — gönder. Teknik destek paketimizle entegrasyonu birlikte yaparız."
+        },
+        {
+          "q": "Kaç numara bağlayabilirim?",
+          "a": "Abone planında bir numara. Sistem kurulum paketinde sınırsız — her müşterine ayrı numara bağlatabilirsin."
+        },
+        {
+          "q": "Bayi olabilir miyim?",
+          "a": "Evet. Sistemi satın al, kendi sunucuna kur, kendi fiyatlarınla müşteri topla. Abone planlarını dilediğin gibi fiyatlandır."
+        },
+        {
+          "q": "Ödeme nasıl yapılıyor?",
+          "a": "WhatsApp üzerinden iletişime geç. Havale/EFT veya kart ile ödeme. Kurulum sonrası teslim."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Hemen Başla",
+      "subtitle": "50 mesaj ücretsiz demo. Kredi kartı gerekmez.",
+      "btn_demo": "Ücretsiz Demo Al",
+      "btn_whatsapp": "WhatsApp'tan Yaz",
+      "btn_system": "Sistem Satın Al"
+    },
+    "footer": {
+      "desc": "Self-hosted WhatsApp API. Kendi sunucunda çalışır, veriler sende kalır.",
+      "links_title": "Bağlantılar",
+      "links": ["Özellikler", "Fiyatlar", "API Docs", "Demo"],
+      "contact_title": "İletişim",
+      "rights": "Tüm hakları saklıdır."
+    }
+  },
+  "en": {
+    "nav": {
+      "features": "Features",
+      "howto": "How It Works",
+      "pricing": "Pricing",
+      "docs": "API Docs",
+      "demo": "Try Demo",
+      "contact": "Contact"
+    },
+    "hero": {
+      "badge": "Self-Hosted WhatsApp API",
+      "title": "Connect WhatsApp to Everything",
+      "subtitle": "Send WhatsApp messages from Excel, your software, any project. Runs on your own server, data stays yours — subscribe monthly or buy the full system.",
+      "cta_subscribe": "Subscribe Now",
+      "cta_system": "Buy the System",
+      "cta_demo": "Free Demo",
+      "stat_messages": "Daily Messages",
+      "stat_media": "Media Types",
+      "stat_setup": "Setup"
+    },
+    "scenarios": {
+      "title": "Who Uses It?",
+      "subtitle": "Anyone using WhatsApp. No technical knowledge required.",
+      "items": [
+        {
+          "icon": "🕯️",
+          "title": "Handmade Product Seller",
+          "desc": "Candles, jewelry, soap... Send 'new collection' messages to your customer list with one click."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Restaurant / Café",
+          "desc": "Automatically send daily menus, campaigns, and reservation reminders."
+        },
+        {
+          "icon": "📊",
+          "title": "Excel Users",
+          "desc": "Call the API with VBA. Send WhatsApp messages directly from your Excel list — no coding needed."
+        },
+        {
+          "icon": "🏪",
+          "title": "E-Commerce / Store",
+          "desc": "Order notifications, shipping updates, campaign announcements. Automatic integration."
+        },
+        {
+          "icon": "💻",
+          "title": "Developer / Agency",
+          "desc": "Install the system, collect customers, become a reseller. Integrate into any project via HTTP API."
+        },
+        {
+          "icon": "🏢",
+          "title": "Enterprise",
+          "desc": "Run on your own server, your own IP. Data privacy, compliance, unlimited control."
+        }
+      ]
+    },
+    "howto": {
+      "title": "How It Works",
+      "subtitle": "Start in 3 steps, send messages in minutes.",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Connect WhatsApp",
+          "desc": "Link your existing WhatsApp number via QR code or pairing code. Your phone app keeps working normally."
+        },
+        {
+          "num": "02",
+          "title": "Get Your Token",
+          "desc": "Copy your API token from the dashboard. Use this token to send messages from anywhere."
+        },
+        {
+          "num": "03",
+          "title": "Integrate & Send",
+          "desc": "curl, Python, Node.js, Excel VBA, n8n... anything that can make an HTTP request works."
+        }
+      ]
+    },
+    "api": {
+      "title": "Developer-Friendly API",
+      "subtitle": "Get a token, make a request, send a message. That's it.",
+      "tabs": ["cURL", "Python", "Node.js", "Excel VBA", "n8n"]
+    },
+    "features": {
+      "title": "Everything Included",
+      "subtitle": "From messaging to automation, all tools ready.",
+      "items": [
+        { "icon": "💬", "title": "Text Message", "desc": "Single or bulk text messages" },
+        { "icon": "🖼️", "title": "Image & Video", "desc": "Via URL or direct file upload" },
+        { "icon": "🎵", "title": "Audio", "desc": "Voice messages and audio files" },
+        { "icon": "📎", "title": "File Sharing", "desc": "PDF, Excel, Word, any format" },
+        { "icon": "📋", "title": "Bulk Messaging", "desc": "Select from contacts, send to list" },
+        { "icon": "🔑", "title": "API Token", "desc": "Bearer auth, works in any language" },
+        { "icon": "👥", "title": "Multi-Customer", "desc": "Each customer links their own number" },
+        { "icon": "📦", "title": "Package Management", "desc": "Automatic limit, expiry, plan management" },
+        { "icon": "🔔", "title": "Auto Notification", "desc": "WhatsApp notification on plan upgrade" },
+        { "icon": "🛡️", "title": "Blacklist", "desc": "Prevent demo abuse" },
+        { "icon": "📱", "title": "QR / Pairing", "desc": "Connect even without phone nearby" },
+        { "icon": "🔄", "title": "Auto-Reconnect", "desc": "Automatically reconnects if dropped" }
+      ]
+    },
+    "why": {
+      "title": "Why Your Own Server?",
+      "items": [
+        {
+          "icon": "🛡️",
+          "title": "Zero Ban Risk (For You)",
+          "desc": "Each customer runs on their own VPS, their own IP. One customer's actions never affect others."
+        },
+        {
+          "icon": "🔒",
+          "title": "Data Security & Compliance",
+          "desc": "Customer data never leaves your server. Full GDPR/data compliance, data stays in your hands."
+        },
+        {
+          "icon": "♾️",
+          "title": "Unlimited Control",
+          "desc": "Set package limits, pricing, and features however you want. No dependency on anyone."
+        },
+        {
+          "icon": "💰",
+          "title": "No Monthly Subscription (System Owner)",
+          "desc": "Buy once, use forever. Collect subscribers, grow with your own revenue."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Pricing",
+      "subtitle": "Subscribe, or buy the system and become a reseller.",
+      "tab_subscribe": "Subscription Plans",
+      "tab_system": "Buy the System",
+      "per_month": "/ mo",
+      "per_year": "/ yr",
+      "popular": "Most Popular",
+      "cta_subscribe": "Get Started",
+      "cta_system": "Buy & Install",
+      "system_title": "System Installation Package",
+      "license_title": "+ Annual License",
+      "license_desc": "Optional annual license for updates and technical support"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "Will my WhatsApp number get banned?",
+          "a": "Ban risk depends on usage. It's low if you're not spamming. With the system package, each customer runs on their own IP so risks don't affect each other. We recommend adding delays between bulk messages."
+        },
+        {
+          "q": "Is technical knowledge required?",
+          "a": "For subscription plans, no — connect via QR in the panel and send messages. For system installation, basic VPS/Linux knowledge is sufficient. We deliver with installation included."
+        },
+        {
+          "q": "How do I use it from Excel?",
+          "a": "Use VBA to make an HTTP POST request. Get your API token, paste the sample code, enter phone numbers and message — send. With our support package, we'll do the integration together."
+        },
+        {
+          "q": "How many numbers can I connect?",
+          "a": "One number on subscription plans. Unlimited on the system package — each of your customers gets their own number."
+        },
+        {
+          "q": "Can I become a reseller?",
+          "a": "Yes. Buy the system, install it on your server, collect customers at your own pricing. Price subscription plans however you like."
+        },
+        {
+          "q": "How do I pay?",
+          "a": "Contact us via WhatsApp. Payment by bank transfer or card. Delivered after payment."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Get Started Now",
+      "subtitle": "50 messages free demo. No credit card required.",
+      "btn_demo": "Get Free Demo",
+      "btn_whatsapp": "Message on WhatsApp",
+      "btn_system": "Buy the System"
+    },
+    "footer": {
+      "desc": "Self-hosted WhatsApp API. Runs on your server, data stays yours.",
+      "links_title": "Links",
+      "links": ["Features", "Pricing", "API Docs", "Demo"],
+      "contact_title": "Contact",
+      "rights": "All rights reserved."
+    }
+  }
+}

@@ -2,4 +2,4 @@ name = "calm-voice-61ba"
 compatibility_date = "2026-04-29"
 
 [assets]
-directory = "."
+directory = "./public"
