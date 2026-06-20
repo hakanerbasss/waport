@@ -1609,12 +1609,23 @@ let activeApiTab = 0;
 // ── FETCH DATA ─────────────────────────────
 async function loadData() {
   try {
-    const [i18nRes, pricesRes] = await Promise.all([
+    const [i18nRes, pricesRes, liveRes] = await Promise.all([
       fetch('./i18n.json'),
-      fetch('./prices.json')
+      fetch('./prices.json'),
+      fetch('https://wa.wizaicorp.com/api/public/packages').catch(() => ({ ok: false }))
     ]);
     i18n = await i18nRes.json();
     prices = await pricesRes.json();
+    if (liveRes && liveRes.ok) {
+      try {
+        const live = await liveRes.json();
+        prices.subscription = prices.subscription.map(plan => {
+          const p = live.find(x => x.id === plan.id);
+          if (!p) return plan;
+          return { ...plan, price_try: parseInt(p.price) || plan.price_try, limit: p.limit };
+        });
+      } catch(e) {}
+    }
   } catch(e) {
     // Fallback: inline data if fetch fails (local file:// or CORS)
     console.warn('JSON fetch failed, using inline data');
