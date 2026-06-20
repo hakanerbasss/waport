@@ -1626,8 +1626,8 @@ async function loadData() {
           const newPrice = parseInt(p.price) || plan.price_try;
           const ftr = plan.features_tr ? [...plan.features_tr] : [];
           const fen = plan.features_en ? [...plan.features_en] : [];
-          if (ftr[0] && ftr[0].includes('mesaj')) ftr[0] = `Günlük ${newLimit.toLocaleString('tr-TR')} mesaj`;
-          if (fen[0] && fen[0].includes('messages')) fen[0] = `${newLimit.toLocaleString('en-US')} messages/day`;
+          if (ftr[0] && ftr[0].includes('mesaj')) ftr[0] = newLimit >= 9999 ? 'Günlük sınırsız mesaj' : `Günlük ${newLimit.toLocaleString('tr-TR')} mesaj`;
+          if (fen[0] && fen[0].includes('messages')) fen[0] = newLimit >= 9999 ? 'Unlimited messages/day' : `${newLimit.toLocaleString('en-US')} messages/day`;
           return { ...plan, price_try: newPrice, limit: newLimit, features_tr: ftr, features_en: fen };
         });
       } catch(e) {}
